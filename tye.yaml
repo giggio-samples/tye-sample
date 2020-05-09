@@ -19,3 +19,16 @@ services:
   - name: redis-cli
     image: redis
     args: "redis-cli -h redis MONITOR"
+ingress:
+  - name: ingress
+    bindings:
+      - port: 8080
+    rules:
+      - path: /frontend
+        service: frontend
+      - path: /backend
+        service: backend
+      - host: backend.local
+        service: backend
+      - host: frontend.local
+        service: frontend
