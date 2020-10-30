@@ -6,6 +6,8 @@
 #
 extensions:
   - name: zipkin
+  - name: seq
+    logPath: ./.logs
 name: microservice
 registry: localhost:5000
 services:
